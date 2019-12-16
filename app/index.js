@@ -5,16 +5,29 @@ const config = require("../config");
 
 // initilaize the application
 const app = express();
+
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
 if( config.NODE_ENV !== 'test') {
     app.use(morgan("common"));
 }
 
-// setup application routes
-app.get("/", (req, res) => {
-    res.send("Hello Word");
+app.get("/", (req, res, next) => {
+    res.send("Ready to serve requests");
+});
+
+app.all("*", (req, res, next) => {
+    return next({
+        status: 404,
+        message: "path not found"
+    });
+});
+
+app.use( (error, req, res, next) => {
+    res.status(error.status || 500).json({
+        message: error.message || "something went wrong"    
+    });
 });
 
 module.exports = app;

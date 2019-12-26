@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-module.exports = {
-    NODE_ENV: process.env.NODE_ENV,
-    PORT: process.env.PORT,
-};
+const env = process.env.NODE_ENV || "development";
+const config = require(`./${env}`);
+
+module.exports = config;

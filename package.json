@@ -1,7 +1,7 @@
 {
-  "name": "spendur-api",
+  "name": "mern-template-api",
   "version": "1.0.0",
-  "description": "a web application for tracking expenses",
+  "description": "",
   "main": "src/app.js",
   "scripts": {
     "start": "NODE_ENV=production node src/app.js",
@@ -12,11 +12,9 @@
   "author": "Nicholas Chumney",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
     "morgan": "^1.9.1"
   },
   "devDependencies": {

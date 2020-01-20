@@ -9,6 +9,7 @@ const middleware = require("./middleware");
 // configure the application
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 if(config.env !== "test") {
     app.use(morgan("common"));
@@ -26,7 +27,8 @@ app.all("*", (req, res, next) => {
      });
 });
 
-app.use(middleware.handleError); // error handling
+// error handling
+app.use(middleware.handleError); 
 
 // start the server
 app.listen(config.port, () => {

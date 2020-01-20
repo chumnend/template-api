@@ -6,7 +6,7 @@ const expect = chai.expect;
 const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 
-describe("INTEGRATION TESTS", function() {
+describe("APP INTEGRATION TESTS", function() {
     describe("/", function () {
         it("expects to be ready to serve", function(done) {
             chai.request(app)

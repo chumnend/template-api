@@ -5,6 +5,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const config = require("./config");
 const middleware = require("./middleware");
+const routers = require("./routers");
 
 // configure the application
 const app = express();
@@ -12,20 +13,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 if(config.env !== "test") {
+    // middleware deactivated in testing mode
     app.use(morgan("common"));
 }
 
-// setup routes
-app.get("/", (req, res, next) => {
-    res.send("ready to serve requests"); 
-});
-
-app.all("*", (req, res, next) => {
-     return next({
-        status: 404,
-        message: "path not found"
-     });
-});
+// setup routers
+app.use("/", routers.default);
+/*
+    NEW ROUTERS GO HERE
+*/
+app.all("*", routers.error);
 
 // error handling
 app.use(middleware.handleError); 

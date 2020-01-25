@@ -7,7 +7,7 @@ const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 
 describe("ERROR INTEGRATION TEST", function() {
-    describe("/not-a-path", function () {
+    describe("GET /not-a-path", function () {
         it("expects to encounter 404", function(done) {
             chai.request(app)
                 .get("/not-a-path")

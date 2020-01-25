@@ -7,7 +7,7 @@ const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 
 describe("DEFAULT INTEGRATION TEST", function() {
-    describe("/", function () {
+    describe("GET /", function () {
         it("expects to be ready to serve", function(done) {
             chai.request(app)
                 .get("/")

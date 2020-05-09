@@ -1,5 +1,6 @@
 'use strict';
 
 module.exports = {
-  notFound: require('./notFound'),
+  env: 'test',
+  port: 4000
 };

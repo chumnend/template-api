@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
 module.exports = {
-    default: require("./default"),    
-    error: require("./error"),
+  default: require('./default'),    
+  error: require('./error'),
 };

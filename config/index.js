@@ -1,16 +1,16 @@
-"use strict";
+'use strict';
 
-require("dotenv").config();
+require('dotenv').config();
 
 // ensure required environment variables exist
 const required = [
-    "NODE_ENV",
-    "PORT"
+  'NODE_ENV',
+  'PORT'
 ];
 required.forEach( (name) => {
-    if(!process.env[name]) {
-        throw new Error(`environment variable ${name} not found`);
-    } 
+  if(!process.env[name]) {
+    throw new Error(`environment variable ${name} not found`);
+  } 
 });
 
 // load configuration file

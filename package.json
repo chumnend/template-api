@@ -2,11 +2,11 @@
   "name": "mern-template-api",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "NODE_ENV=production node src/app.js",
-    "dev": "NODE_ENV=development nodemon src/app.js",
-    "test": "NODE_ENV=test mocha --timeout 10000 './src/**/*.test.js'"
+    "start": "NODE_ENV=production node src/index.js",
+    "dev": "NODE_ENV=development nodemon src/index.js",
+    "test": "NODE_ENV=test mocha --timeout 10000 './{,!(node_modules)/**}/*.test.js'"
   },
   "keywords": [],
   "author": "Nicholas Chumney",

@@ -1,3 +1,9 @@
-"use strict";
+'use strict';
 
-module.exports = require("./routes");
+const router = require('express').Router();
+const funcs = require('./functions');
+
+router.route('/')
+  .get(funcs.ready);
+
+module.exports = router;

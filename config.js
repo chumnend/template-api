@@ -19,7 +19,7 @@ switch(process.env.NODE_ENV) {
   case 'development':
     Object.assign(config, {
       env: 'development',
-      port: process.env.PORT || 3000
+      port: process.env.PORT
     });
     break;
   case 'test': 
@@ -31,7 +31,7 @@ switch(process.env.NODE_ENV) {
   case 'production':
     Object.assign(config, {
       env: 'production',
-      port: process.env.PORT || 3000
+      port: process.env.PORT
     })
 }
 

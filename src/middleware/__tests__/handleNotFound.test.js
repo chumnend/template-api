@@ -1,16 +1,12 @@
 'use strict';
 
 const chai = require('chai');
-const handleError = require('../handleError');
+const handleNotFound = require('../handleNotFound');
 const expect = chai.expect;
 
-describe('MIDDLEWARE UNIT TEST - HANDLEERROR', function() {
-  it('expects to parse messages correctly', function() {
+describe('MIDDLEWARE UNIT TEST - HANDLENOTFOUND', function() {
+  it('expects to return not found', function() {
     // setup test
-    let err = {
-      status: 200,
-      message: 'this is a test',
-    };
     let req = {};
     let res = {
       statusCode: null,
@@ -26,8 +22,8 @@ describe('MIDDLEWARE UNIT TEST - HANDLEERROR', function() {
     let next = function() {};
     
     // start test
-    handleError(err, req, res, next);
-    expect(res.statusCode).to.be.equal(err.status);
-    expect(res.body).to.have.property('message', err.message);
+    handleNotFound(req, res, next);
+    expect(res.statusCode).to.be.equal(404);
+    expect(res.body).to.have.property('message', 'path not found');
   });
 });

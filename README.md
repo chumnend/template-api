@@ -1,2 +1,2 @@
-# mern-template-api
-A node server template for a MERN application
+# Express API Template
+A starter template for Node.js and Express api

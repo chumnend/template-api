@@ -22,8 +22,11 @@ app.get('/status', (req, res, next) => {
   res.send('OK');
 });
 
+app.all('*', (req, res, next) => {
+  res.status(404).json({ message: 'path not found', });
+});
+
 // error handling
-app.use(middleware.handleNotFound);
 app.use(middleware.handleError);
 
 // start the server

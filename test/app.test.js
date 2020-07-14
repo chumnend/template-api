@@ -1,14 +1,12 @@
 'use strict';
 
-process.env.NODE_ENV = 'test';
-
 const app = require('../src');
 const chai = require('chai');
 const expect = chai.expect;
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
-describe('APP INTEGRATION TEST', function() {
+describe('Application', function() {
   describe('GET /status', function() {
     it('expects to recieve okay status', function(done) {
       chai.request(app)

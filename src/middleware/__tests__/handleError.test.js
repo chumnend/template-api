@@ -4,7 +4,7 @@ const chai = require('chai');
 const handleError = require('../handleError');
 const expect = chai.expect;
 
-describe('MIDDLEWARE UNIT TEST - HANDLEERROR', function() {
+describe('Middleware - handleError ', function() {
   it('expects to parse messages correctly', function() {
     // setup test
     let err = {

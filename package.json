@@ -5,8 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon",
-    "lint": "npx eslint src/ --ignore-path .gitignore --ext .js",
+    "dev": "nodemon src/index.js",
+    "lint": "npx eslint 'src/**/*.js'",
+    "format": "prettier --write 'src/**/*.js'",
     "test": "NODE_ENV=test mocha './{,!(node_modules)/**}/*.test.js'"
   },
   "keywords": [],
@@ -22,10 +23,11 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
-    "eslint": "^7.4.0",
+    "eslint": "^7.6.0",
     "faker": "^4.1.0",
     "mocha": "^7.2.0",
     "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
     "sinon": "^8.1.1"
   }
 }

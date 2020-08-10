@@ -4,8 +4,8 @@ const chai = require('chai');
 const handleError = require('../handleError');
 const expect = chai.expect;
 
-describe('Middleware - handleError ', function() {
-  it('expects to parse messages correctly', function() {
+describe('Middleware - handleError ', function () {
+  it('expects to parse messages correctly', function () {
     // setup test
     let err = {
       status: 200,
@@ -15,16 +15,16 @@ describe('Middleware - handleError ', function() {
     let res = {
       statusCode: null,
       body: null,
-      status: function(code) {
+      status: function (code) {
         this.statusCode = code;
-        return this; 
+        return this;
       },
-      json: function(data){
+      json: function (data) {
         this.body = data;
       },
     };
-    let next = function() {};
-    
+    let next = function () {};
+
     // start test
     handleError(err, req, res, next);
     expect(res.statusCode).to.be.equal(err.status);

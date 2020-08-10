@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(helmet());
-if(config.env !== 'test') {
-  app.use(morgan('common'));  // middleware deactivated in testing mode
+if (config.env !== 'test') {
+  app.use(morgan('common')); // middleware deactivated in testing mode
 }
 
 // setup routes
@@ -23,7 +23,7 @@ app.get('/status', (req, res, next) => {
 });
 
 app.all('*', (req, res, next) => {
-  res.status(404).json({ message: 'path not found', });
+  res.status(404).json({ message: 'path not found' });
 });
 
 // error handling

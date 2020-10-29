@@ -1,29 +1,27 @@
 # Express API Template
-A starter template for Express and NodeJS API server
+A starter template for Express and Node.js API server
 
 ## API Documentation
 TBD
 
-## Project Setup
+## Development Setup
 
 ### Prerequisites
 - Install Node.js
-- Set environment variables
 
-### Environment Variables
-Copy and rename `env.example` to `.env`. Fill out the following variables.
+### Configuration
+1) Clone the repo
+2) Run `npm install` to install dependencies
+3) Copy the file `env.example` and rename it `.env`. This file contains the 
+name of required environment variables needed for the application to work.
 
-```
-# set for runtime environment
-NODE_ENV=
-PORT=
 
 ```
+NODE_ENV=             # 'development' or 'production' or 'test'
+PORT=                 # Port number the application will run on
+```
 
-### Start
-```
-npm start
-```
+4) Start the application using `npm start` or `npm run dev` for hot reloading
 
 ### Deployment
 TBD

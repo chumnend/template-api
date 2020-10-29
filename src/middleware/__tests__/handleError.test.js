@@ -2,6 +2,7 @@
 
 const chai = require('chai');
 const handleError = require('../handleError');
+
 const expect = chai.expect;
 
 describe('Middleware - handleError ', function () {
@@ -10,6 +11,9 @@ describe('Middleware - handleError ', function () {
     let err = {
       status: 200,
       message: 'this is a test',
+      extra: {
+        name: 'this is extra information',
+      }
     };
     let req = {};
     let res = {
@@ -29,5 +33,6 @@ describe('Middleware - handleError ', function () {
     handleError(err, req, res, next);
     expect(res.statusCode).to.be.equal(err.status);
     expect(res.body).to.have.property('message', err.message);
+    expect(res.body).to.have.property('extra', err.extra);
   });
 });

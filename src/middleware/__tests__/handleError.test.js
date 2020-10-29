@@ -8,15 +8,15 @@ const expect = chai.expect;
 describe('Middleware - handleError ', function () {
   it('expects to parse messages correctly', function () {
     // setup test
-    let err = {
+    const err = {
       status: 200,
       message: 'this is a test',
       extra: {
         name: 'this is extra information',
       }
     };
-    let req = {};
-    let res = {
+    const req = {};
+    const res = {
       statusCode: null,
       body: null,
       status: function (code) {
@@ -27,7 +27,7 @@ describe('Middleware - handleError ', function () {
         this.body = data;
       },
     };
-    let next = function () {};
+    const next = function () {};
 
     // start test
     handleError(err, req, res, next);

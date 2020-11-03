@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  HttpError: require('./HttpError'),
+  createError: require('./createError'),
 };

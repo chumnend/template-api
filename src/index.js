@@ -5,14 +5,14 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const middleware = require('./middleware');
 const config = require('./config');
-const { HttpError } = require('./utils');
+const middleware = require('./middleware');
+const utils = require('./utils');
 
 // configure the application
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(cookieParser());
 app.use(helmet());
@@ -26,7 +26,7 @@ app.get('/status', (req, res, next) => {
 });
 
 app.all('*', (req, res, next) => {
-  const err = new HttpError(404, 'page not found');
+  const err = utils.createError(404, 'Path not found');
   return next(err);
 });
 
@@ -35,7 +35,7 @@ app.use(middleware.handleError);
 
 // start the server
 app.listen(config.port, () => {
-  console.log('listening on port', config.port);
+  console.log('Listening on port', config.port);
 });
 
 module.exports = app;

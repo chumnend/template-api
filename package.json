@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "lint": "npx eslint 'src/**/*.js'",
-    "lint:fix": "npx prettier --write 'src/**/*.js'",
+    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "lint:fix": "./node_modules/.bin/eslint ./src --fix && ./node_modules/.bin/prettier --write src/**/*.js",
     "test": "NODE_ENV=test mocha './{,!(node_modules)/**}/*.test.js' --exit"
   },
   "keywords": [],

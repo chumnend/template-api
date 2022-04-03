@@ -7,7 +7,8 @@ TBD
 ## Development Setup
 
 ### Prerequisites
-- Install Node.js
+- Node 16
+- npm 8
 
 ### Configuration
 1) Clone the repo

@@ -1,7 +1,7 @@
 'use strict';
 
 const chai = require('chai');
-const createError = require('../createError');
+const createError = require('../../src/utils/createError');
 
 const expect = chai.expect;
 

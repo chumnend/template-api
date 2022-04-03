@@ -1,7 +1,7 @@
 'use strict';
 
 const chai = require('chai');
-const handleError = require('../handleError');
+const handleError = require('../../src/middleware/handleError');
 
 const expect = chai.expect;
 
